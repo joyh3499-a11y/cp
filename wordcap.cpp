@@ -1,13 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-     string s;
-     cin >> s;
+    string n;
+    cin >> n;
 
-     for (int i=0; i<s.size(); i++) {
-          if (islower(s[0])) {
-               s[0]= toupper(s[0]);
-          }
-     }
-     cout << s ;
+  int up =0;
+    int low = 0;
+
+    for (char c:n) {
+        if (isupper(c)) up++;
+        else low++;
+    }
+    if (up > low) {
+        for (char &c : n) c = toupper(c);
+    } else {
+        for (char &c : n) c = tolower(c);
+    }
+
+    cout << n << endl;
+    return 0;
+
 }
