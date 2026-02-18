@@ -1,20 +1,23 @@
-/* The problem name is
- *A. Magnets */
-
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int main() {
+int main()
+{
     int n;
     cin >> n;
-    string m,k;
-    int count=1;
-    cin >> m;
-    for(int i=1;i<n;i++) {
-        cin >> k;
-        if (k!=m) {
-            count++;
+    string j,k;
+    int groups=0;
+    for(int i=0; i<n; i++)
+    {
+        cin >> j;
+        if(i==0)
+        {
+            groups = 1;
         }
-        m=k;
+        else if (j != k)
+        {
+            groups++;
+        }
+        k =j;
     }
-    cout<<count;
+    cout << groups;
 }
